@@ -3,25 +3,25 @@ const advantages = [
     number: '01',
     title: 'İhtiyacınıza Uygun Seçenekler',
     description:
-      'Yük sahipleri farklı taşıyıcılardan gelen teklifleri değerlendirebilir. Nakliyeciler ise araçlarına ve güzergâhlarına uygun yük ilanlarını inceleyebilir.',
+      'Yükünüz için farklı taşıma tekliflerini karşılaştırın veya aracınıza ve güzergâhınıza uygun iş fırsatlarını keşfedin.',
   },
   {
     number: '02',
-    title: 'Daha Düzenli Bir Süreç',
+    title: 'Tüm Süreç Tek Yerde',
     description:
-      'Yük ilanları, taşıma teklifleri ve taraflar arasındaki görüşmeler aynı platform üzerinden yürütülerek sürecin takip edilmesi kolaylaştırılır.',
+      'İlanlardan tekliflere, görüşmelerden anlaşmalara kadar taşıma sürecinin temel adımlarını tek platformdan takip edin.',
   },
   {
     number: '03',
-    title: 'Doğrudan İletişim',
+    title: 'Koşulları Siz Belirleyin',
     description:
-      'Yük sahipleri ve nakliyeciler, taşıma detaylarını ve teklif koşullarını doğrudan görüşerek karşılıklı beklentilerini netleştirebilir.',
+      'Taşıma detaylarını doğrudan görüşün, beklentilerinizi paylaşın ve sizin için uygun koşullarda anlaşın.',
   },
   {
     number: '04',
-    title: 'Karşılıklı Onaya Dayalı Anlaşma',
+    title: 'Karşılıklı Onay',
     description:
-      'Taraflar, taşıma koşullarında uzlaştıktan sonra anlaşmayı karşılıklı olarak onaylayarak süreci ilerletebilir.',
+      'Tarafların üzerinde uzlaştığı koşullar, karşılıklı onayla netleşsin. Süreç her iki tarafın da bilgisi dahilinde ilerlesin.',
   },
 ]
 
@@ -29,32 +29,38 @@ function WhyEntirSection() {
   return (
     <section
       id="neden-entir"
-      className="bg-surface py-20 sm:py-24 lg:py-28"
+      className="relative overflow-hidden bg-surface py-20 sm:py-24 lg:py-28"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      {/* Background decoration */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-sage/10 blur-3xl"
+      />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 
           {/* Left: Introduction */}
           <div className="lg:sticky lg:top-32 lg:self-start">
             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-brand">
-              Neden ENTIR?
+              NEDEN ENTIR?
             </span>
 
-            <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl">
-              Taşımacılıkta
-              <span className="block text-brand">
-                daha fazlası mümkün.
+            <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.75rem]">
+              Taşımacılıkta doğru bağlantılar,
+              <span className="mt-2 block text-brand">
+                daha kolay süreçler.
               </span>
             </h2>
 
             <p className="mt-7 max-w-lg text-base leading-8 text-gray-600 sm:text-lg">
-              ENTIR, yük sahipleri ve nakliyecilerin ihtiyaçlarını
-              aynı dijital ortamda buluşturarak taşımacılık
-              süreçlerini daha erişilebilir, düzenli ve
-              yönetilebilir hale getirmeyi hedefler.
+              Doğru taşıma fırsatına ulaşmak, seçenekleri değerlendirmek
+              ve anlaşma sürecini yönetmek karmaşık olmak zorunda değil.
+              ENTIR, taşımacılığın farklı aşamalarını daha anlaşılır
+              ve erişilebilir hale getirmek için tasarlanıyor.
             </p>
 
-            {/* Decorative element */}
+            {/* Decorative line */}
             <div
               aria-hidden="true"
               className="mt-10 hidden h-1 w-20 rounded-full bg-brand lg:block"
@@ -64,18 +70,24 @@ function WhyEntirSection() {
           {/* Right: Advantages */}
           <div className="divide-y divide-border-soft border-y border-border-soft">
             {advantages.map((advantage) => (
-              <div
+              <article
                 key={advantage.number}
-                className="group grid gap-5 py-8 sm:grid-cols-[64px_1fr] sm:gap-7 sm:py-10"
+                className="group relative grid gap-5 py-8 transition-all duration-300 sm:grid-cols-[64px_1fr] sm:gap-7 sm:py-10"
               >
+                {/* Hover background */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -inset-x-4 inset-y-2 rounded-2xl bg-sage/0 transition-colors duration-300 group-hover:bg-sage/10 sm:-inset-x-5"
+                />
+
                 {/* Number */}
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sage/30 text-sm font-bold text-brand transition-colors duration-300 group-hover:bg-brand group-hover:text-white">
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-sage/40 bg-sage/20 text-sm font-bold text-brand transition-all duration-300 group-hover:border-brand group-hover:bg-brand group-hover:text-white">
                   {advantage.number}
                 </div>
 
                 {/* Content */}
-                <div>
-                  <h3 className="text-xl font-bold tracking-tight text-ink transition-colors duration-200 group-hover:text-brand">
+                <div className="relative">
+                  <h3 className="text-xl font-bold tracking-tight text-ink transition-colors duration-300 group-hover:text-brand">
                     {advantage.title}
                   </h3>
 
@@ -83,7 +95,7 @@ function WhyEntirSection() {
                     {advantage.description}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
 

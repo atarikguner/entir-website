@@ -4,7 +4,7 @@ function ContactPage() {
 
       {/* 1. PAGE HERO */}
 
-        <section className="relative overflow-hidden bg-white py-24 sm:py-32 lg:py-40">
+        <section className="relative overflow-hidden bg-surface py-20 sm:py-24 lg:py-28">
 
         {/* Background decoration */}
 

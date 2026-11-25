@@ -20,17 +20,16 @@ function HeroSection() {
           </h1>
 
           <p className="mt-7 max-w-xl text-base leading-8 text-gray-600 sm:text-lg">
-            ENTIR, yük sahipleriyle tırcıları aynı platformda buluşturur.
-            Yükünüzü ilan olarak yayınlayın, taşıyıcılardan teklif alın ve
-            sizin için en uygun koşullarda anlaşın. Aracınıza yük arıyorsanız
-            güzergâhınıza uygun ilanları inceleyin, teklifinizi verin ve
-            sıradaki işinizi kolayca bağlayın.
+            ENTIR, yük sahipleriyle nakliyecileri tek platformda buluşturur.
+            Yükünüzü ilan edin, teklifleri değerlendirin ve size uygun
+            taşıyıcıyla anlaşın. Aracınıza yük arıyorsanız güzergâhınıza
+            uygun ilanları keşfedin ve yeni iş fırsatlarına ulaşın.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Link
               to="/platformumuz"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-7 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-hover hover:shadow-lg"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-brand px-7 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-hover hover:shadow-lg"
             >
               Platformu Keşfet
               <span aria-hidden="true">→</span>
@@ -45,236 +44,308 @@ function HeroSection() {
           </div>
         </div>
 
-        {/* Right: Minimalist logistics illustration */}
+        {/* Right: Animated logistics network */}
         <div className="relative mx-auto w-full max-w-xl">
           <svg
-            viewBox="0 0 600 460"
+            viewBox="0 0 620 480"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             role="img"
-            aria-labelledby="logistics-title logistics-description"
+            aria-labelledby="hero-logistics-title hero-logistics-desc"
             className="h-auto w-full"
           >
-            <title id="logistics-title">
+            <title id="hero-logistics-title">
               ENTIR Lojistik Ağı
             </title>
-
-            <desc id="logistics-description">
-              Çıkış noktasından varış noktasına uzanan bir güzergâh
-              üzerinde yük taşıyan tır illüstrasyonu.
+            <desc id="hero-logistics-desc">
+              Lojistik bağlantı noktaları ve hareketli güzergâh çizgileri
+              arasında yük taşıyan modern bir tır illüstrasyonu.
             </desc>
 
-            {/* Subtle background geometry */}
-            <circle
-              cx="300"
-              cy="225"
-              r="175"
-              fill="#F7F9F6"
-            />
+            <defs>
+              <linearGradient id="hero-bg-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#F7F9F6" />
+                <stop offset="100%" stopColor="#EAF2ED" />
+              </linearGradient>
+
+              <linearGradient id="hero-trailer-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#42796A" />
+                <stop offset="100%" stopColor="#2A5E51" />
+              </linearGradient>
+
+              <linearGradient id="hero-cabin-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#2A5E51" />
+                <stop offset="100%" stopColor="#173F35" />
+              </linearGradient>
+
+              <filter id="hero-soft-shadow" x="-30%" y="-50%" width="160%" height="200%">
+                <feDropShadow
+                  dx="0"
+                  dy="12"
+                  stdDeviation="12"
+                  floodColor="#173F35"
+                  floodOpacity="0.12"
+                />
+              </filter>
+            </defs>
+
+            {/* Background */}
+            <circle cx="310" cy="235" r="195" fill="url(#hero-bg-gradient)" />
 
             <circle
-              cx="300"
-              cy="225"
-              r="135"
-              stroke="#E1E9E3"
+              cx="310"
+              cy="235"
+              r="157"
+              stroke="#DCE9E1"
               strokeWidth="1.5"
-              strokeDasharray="5 9"
+              strokeDasharray="5 10"
+              className="hero-orbit"
             />
 
             <circle
-              cx="300"
-              cy="225"
-              r="95"
-              stroke="#E1E9E3"
-              strokeWidth="1"
+              cx="310"
+              cy="235"
+              r="115"
+              stroke="#DCE9E1"
+              strokeWidth="1.5"
             />
 
-            {/* Route */}
+            {/* Logistics connections */}
             <path
-              d="M105 335 C145 335 155 275 210 275 H375 C430 275 440 335 495 335"
+              d="M95 335 C155 335 165 275 225 275 H395 C455 275 465 335 525 335"
               stroke="#A8C5B5"
               strokeWidth="3"
+              strokeDasharray="8 12"
               strokeLinecap="round"
-              strokeDasharray="7 10"
+              className="hero-route"
             />
 
-            {/* Starting point */}
-            <circle
-              cx="105"
-              cy="335"
-              r="9"
-              fill="#2A5E51"
-            />
-
-            <circle
-              cx="105"
-              cy="335"
-              r="17"
-              stroke="#A8C5B5"
+            <path
+              d="M155 145 C210 105 255 110 295 155"
+              stroke="#B8D0C3"
               strokeWidth="2"
+              strokeDasharray="5 10"
+              className="hero-route hero-route-slow"
             />
 
-            {/* Destination */}
-            <circle
-              cx="495"
-              cy="335"
-              r="9"
-              fill="#2A5E51"
-            />
-
-            <circle
-              cx="495"
-              cy="335"
-              r="17"
-              stroke="#A8C5B5"
+            <path
+              d="M405 155 C455 115 495 145 515 195"
+              stroke="#B8D0C3"
               strokeWidth="2"
+              strokeDasharray="5 10"
+              className="hero-route hero-route-slow"
             />
 
-            {/* Cargo containers */}
-            <g transform="translate(135 145)">
-              <rect
-                x="0"
-                y="25"
-                width="115"
-                height="80"
-                rx="5"
-                fill="#A8C5B5"
-              />
-
-              <path
-                d="M15 25 V105 M35 25 V105 M55 25 V105 M75 25 V105 M95 25 V105"
-                stroke="#2A5E51"
+            {/* Connection points */}
+            <g className="hero-node">
+              <circle cx="95" cy="335" r="20" fill="#E5F0E9" />
+              <circle cx="95" cy="335" r="11" fill="#2A5E51" />
+              <circle
+                cx="95"
+                cy="335"
+                r="25"
+                stroke="#A8C5B5"
                 strokeWidth="2"
-                opacity="0.45"
-              />
-
-              <rect
-                x="25"
-                y="0"
-                width="115"
-                height="80"
-                rx="5"
-                fill="#42796A"
-              />
-
-              <path
-                d="M40 0 V80 M60 0 V80 M80 0 V80 M100 0 V80 M120 0 V80"
-                stroke="#173F35"
-                strokeWidth="2"
-                opacity="0.3"
+                className="hero-pulse"
               />
             </g>
 
-            {/* Truck */}
-            <g transform="translate(205 250)">
-              {/* Trailer */}
-              <rect
-                x="0"
-                y="-40"
-                width="175"
-                height="95"
-                rx="8"
-                fill="#2A5E51"
-              />
-
-              {/* Trailer details */}
-              <path
-                d="M25 -25 V40 M55 -25 V40 M85 -25 V40 M115 -25 V40 M145 -25 V40"
+            <g className="hero-node hero-node-delayed">
+              <circle cx="525" cy="335" r="20" fill="#E5F0E9" />
+              <circle cx="525" cy="335" r="11" fill="#2A5E51" />
+              <circle
+                cx="525"
+                cy="335"
+                r="25"
                 stroke="#A8C5B5"
                 strokeWidth="2"
-                opacity="0.35"
+                className="hero-pulse"
               />
+            </g>
+
+            {/* Floating logistics cards */}
+            <g className="hero-float-card">
+              <rect
+                x="85"
+                y="115"
+                width="125"
+                height="58"
+                rx="14"
+                fill="white"
+                stroke="#E1E9E3"
+                strokeWidth="1.5"
+              />
+              <rect x="101" y="130" width="27" height="27" rx="8" fill="#EAF2ED" />
+              <path
+                d="M108 143 H121 M108 149 H118"
+                stroke="#2A5E51"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <rect x="139" y="134" width="53" height="5" rx="2.5" fill="#2A5E51" />
+              <rect x="139" y="145" width="39" height="4" rx="2" fill="#C7D8CE" />
+            </g>
+
+            <g className="hero-float-card hero-float-card-delayed">
+              <rect
+                x="425"
+                y="115"
+                width="120"
+                height="58"
+                rx="14"
+                fill="white"
+                stroke="#E1E9E3"
+                strokeWidth="1.5"
+              />
+              <circle cx="449" cy="144" r="14" fill="#EAF2ED" />
+              <path
+                d="M443 144 L448 149 L456 139"
+                stroke="#2A5E51"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <rect x="471" y="134" width="55" height="5" rx="2.5" fill="#2A5E51" />
+              <rect x="471" y="145" width="37" height="4" rx="2" fill="#C7D8CE" />
+            </g>
+
+            {/* Moving road */}
+            <g aria-hidden="true">
+              <path
+                d="M110 390 H510"
+                stroke="#DCE9E1"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+
+              <path
+                d="M110 390 H510"
+                stroke="#8CB4A3"
+                strokeWidth="5"
+                strokeLinecap="round"
+                strokeDasharray="35 55"
+                className="hero-moving-road"
+              />
+            </g>
+
+            {/* Truck shadow */}
+            <ellipse
+              cx="320"
+              cy="355"
+              rx="175"
+              ry="17"
+              fill="#173F35"
+              opacity="0.10"
+            />
+
+            {/* Truck */}
+            <g className="hero-truck" filter="url(#hero-soft-shadow)">
+              {/* Trailer */}
+              <rect
+                x="150"
+                y="205"
+                width="240"
+                height="118"
+                rx="12"
+                fill="url(#hero-trailer-gradient)"
+              />
+
+              {/* Trailer top highlight */}
+              <path
+                d="M162 217 H378"
+                stroke="#8CB4A3"
+                strokeWidth="3"
+                strokeLinecap="round"
+                opacity="0.65"
+              />
+
+              {/* Trailer vertical panels */}
+              {[190, 225, 260, 295, 330, 365].map((x) => (
+                <path
+                  key={x}
+                  d={`M${x} 225 V307`}
+                  stroke="#A8C5B5"
+                  strokeWidth="2"
+                  opacity="0.32"
+                />
+              ))}
+
+              {/* Trailer lower trim */}
+              <rect x="157" y="311" width="226" height="7" rx="3" fill="#173F35" />
 
               {/* Cabin */}
               <path
-                d="M175 -5 H215 L245 25 V55 H175 Z"
-                fill="#173F35"
+                d="M390 248 H438 Q448 248 454 256 L492 294 Q498 300 498 311 V325 H390 Z"
+                fill="url(#hero-cabin-gradient)"
               />
 
-              {/* Window */}
+              {/* Cabin window */}
               <path
-                d="M190 5 H211 L228 25 H190 Z"
-                fill="#A8C5B5"
+                d="M416 261 H438 L472 294 H416 Z"
+                fill="#B9D8C8"
               />
+
+              <path
+                d="M416 261 V294"
+                stroke="#173F35"
+                strokeWidth="4"
+              />
+
+              {/* Door detail */}
+              <path d="M413 303 H435" stroke="#8CB4A3" strokeWidth="3" strokeLinecap="round" />
+
+              {/* Front light */}
+              <rect x="490" y="303" width="8" height="12" rx="3" fill="#E5D6A5" />
 
               {/* Chassis */}
-              <rect
-                x="-5"
-                y="52"
-                width="255"
-                height="9"
-                rx="4"
-                fill="#202C29"
-              />
+              <rect x="145" y="320" width="360" height="13" rx="6" fill="#202C29" />
 
-              {/* Wheels */}
-              <circle
-                cx="45"
-                cy="65"
-                r="20"
-                fill="#202C29"
-              />
+              {/* Animated wheels */}
+              {[215, 330, 445].map((x) => (
+                <g key={x}>
+                  {/* Tire */}
+                  <circle cx={x} cy="337" r="27" fill="#202C29" />
 
-              <circle
-                cx="45"
-                cy="65"
-                r="9"
-                fill="#F7F9F6"
-              />
+                  {/* Rotating rim */}
+                  <g
+                    className="hero-wheel"
+                    style={{
+                      transformOrigin: `${x}px 337px`,
+                    }}
+                  >
+                    <circle cx={x} cy="337" r="15" fill="#F7F9F6" />
 
-              <circle
-                cx="145"
-                cy="65"
-                r="20"
-                fill="#202C29"
-              />
+                    {[0, 90, 180, 270].map((angle) => (
+                      <path
+                        key={angle}
+                        d={`M${x} 325 V331`}
+                        stroke="#8CA99B"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        transform={`rotate(${angle} ${x} 337)`}
+                      />
+                    ))}
 
-              <circle
-                cx="145"
-                cy="65"
-                r="9"
-                fill="#F7F9F6"
-              />
-
-              <circle
-                cx="215"
-                cy="65"
-                r="20"
-                fill="#202C29"
-              />
-
-              <circle
-                cx="215"
-                cy="65"
-                r="9"
-                fill="#F7F9F6"
-              />
+                    <circle cx={x} cy="337" r="7" fill="#8CA99B" />
+                  </g>
+                </g>
+              ))}
             </g>
 
-            {/* Small decorative elements */}
-            <circle
-              cx="425"
-              cy="120"
-              r="6"
-              fill="#A8C5B5"
-            />
-
-            <circle
-              cx="155"
-              cy="110"
-              r="4"
-              fill="#42796A"
-            />
+            {/* Decorative accents */}
+            <circle cx="300" cy="75" r="5" fill="#42796A" opacity="0.7" />
+            <circle cx="555" cy="240" r="7" fill="#A8C5B5" />
+            <circle cx="70" cy="250" r="5" fill="#A8C5B5" />
 
             <path
-              d="M440 160 H485"
+              d="M120 405 H185"
               stroke="#A8C5B5"
               strokeWidth="3"
               strokeLinecap="round"
             />
 
             <path
-              d="M115 390 H165"
+              d="M455 405 H505"
               stroke="#A8C5B5"
               strokeWidth="3"
               strokeLinecap="round"

@@ -28,10 +28,10 @@ function Footer() {
               to="/"
               className="inline-block text-4xl font-bold tracking-tight text-sage"
             >
-              entır
+              entır.
             </Link>
 
-            <p className="mt-6 max-w-sm text-sm leading-7 text-gray-300">
+            <p className="mt-5 max-w-sm text-sm leading-7 text-gray-300">
               ENTIR, yük sahipleri ile nakliyecileri aynı dijital
               platformda buluşturarak taşımacılık süreçlerini
               daha erişilebilir ve düzenli hale getirmeyi amaçlar.
